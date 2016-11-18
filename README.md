@@ -1,4 +1,4 @@
-# go-keystone
+# go-keystone :key:
 
 Go library for Keystone v3.0 API
 
