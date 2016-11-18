@@ -75,20 +75,7 @@ var _ = Describe("Keystone API", func() {
 
 		Context("when user / password is valid", func() {
 			It("returns a valid token", func() {
-				auth := keystone.Auth{
-					Identity: keystone.Identity{
-						Methods: []string{"password"},
-						Password: keystone.IdentityUser{
-							User: keystone.User{
-								Name:     "admin",
-								Password: "password1",
-								Domain: keystone.Domain{
-									Name: "Default",
-								},
-							},
-						},
-					},
-				}
+				auth := keystone.NewAuth("admin", "password1", "Default")
 				token, err := client.Tokens(auth)
 				Expect(err).ToNot(HaveOccurred())
 				Expect(token).To(Equal("fake-but-valid-token"))

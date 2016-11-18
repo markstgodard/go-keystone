@@ -17,5 +17,9 @@ if err != nil {
 }
 
 // get token
-// TODO
+auth := keystone.NewAuth("admin", "password1", "Default")
+token, err := client.Tokens(auth)
+if err != nil {
+    log.Fatal(err)
+}
 ```
