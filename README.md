@@ -16,7 +16,7 @@ if err != nil {
     log.Fatal(err)
 }
 
-// get token
+// get token for username, password and domain name
 auth := keystone.NewAuth("admin", "password1", "Default")
 token, err := client.Tokens(auth)
 if err != nil {
